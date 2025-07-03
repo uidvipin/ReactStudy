@@ -1,0 +1,11 @@
+// Global
+@import "./sass/global/variables";
+
+
+// Components
+@import "./components/Header/Header.scss";
+@import "./components/Header/BlogPost/BlogPost.scss";
+
+
+// Pages
+@import "./pages/BlogList/BlogList.scss";

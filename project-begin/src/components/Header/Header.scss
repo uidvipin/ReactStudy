@@ -1,0 +1,53 @@
+.blog_header{
+
+    display: flex;
+    // flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $theme_color1;
+    padding: 16px;
+
+    .logo{
+
+        font-weight: 700;
+        font-size: 21px;
+        color: $theme_color2;
+
+    }
+
+    .blog_menu{
+
+        display: flex;
+        list-style: none;
+        padding: 0;
+
+        li{
+
+            a{
+
+                color: $theme_color2;
+                text-decoration: none;
+
+                &:hover{
+
+                    color: $white;
+
+                }
+
+            }
+
+            +{
+
+                li{
+
+                    margin-left: 16px;
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
