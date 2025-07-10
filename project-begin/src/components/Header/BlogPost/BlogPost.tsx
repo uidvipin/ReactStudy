@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 interface IBlogPost{
     blogImage:any,
@@ -14,9 +15,11 @@ const BlogPost: React.FC<IBlogPost> = (props) => {
     blogDetails
 
  } = props;
+
+ const navigate = useNavigate();
   
   return (
-    <div className='blog_post'>
+    <div className='blog_post' onClick={() => navigate("blog-details")}>
         <div className='bp_image'>
             {blogImage?
                 <img src={blogImage} alt="" />
