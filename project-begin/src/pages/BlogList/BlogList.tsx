@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import BlogPost from '../../components/Header/BlogPost/BlogPost'
 
-type BlogPost = {
+export type IBlogPost = {
   
   id: any;
   blogImage?: any ;
@@ -9,7 +9,7 @@ type BlogPost = {
   blogDetails: string;
 
 }
-const blogpostsContents:BlogPost[] = [
+const blogpostsContents:IBlogPost[] = [
 
     {
         id: 1,
@@ -37,14 +37,8 @@ const blogpostsContents:BlogPost[] = [
 ];
 
 
-
-// const blglistItems= blogpostsContents.map(blogpostsContent =>
-//     <BlogPost blogImage={blogpostsContent.blogImage} blogTitle={blogpostsContent.blogTitle} blogDetails={blogpostsContent.blogDetails} />
-// );
-
 const BlogList = () => {
-  
-    const [bpClick, setBpClick] = useState<any>([]);
+
 
   return (
     <>
@@ -53,7 +47,7 @@ const BlogList = () => {
 
             {blogpostsContents.map(post => (
 
-                <BlogPost key={post.id} blogImage={post.blogImage} blogTitle={post.blogTitle} blogDetails={post.blogDetails} />
+                <BlogPost key={post.id} id={post.id} blogImage={post.blogImage} blogTitle={post.blogTitle} blogDetails={post.blogDetails} />
 
             ))}
 

@@ -1,39 +1,39 @@
 import React, { FC } from 'react'
-import { useParams } from 'react-router-dom';
-import { BlogDet } from '../Layout';
+import { useLocation, useParams } from 'react-router-dom';
 
 
 
-interface IBlogDetails {
-    blogpostsContents: BlogDet[];
-}
-const BlogDetails: FC<IBlogDetails> = ({ blogpostsContents = [] }) => {
+// interface IBlogDetails {
+//     blogpostsContents: BlogDet[];
+// }
+const BlogDetails = () => {
+    const location = useLocation();
 
-    const { id } = useParams<{ id: string }>();
-    const blogId = Number(id);
-    const blogPost = blogpostsContents.find((post) => post.id === id);
+    // const { id } = useParams<{ id: string }>();
+    // const blogId = Number(id);
+    // const blogPost = blogpostsContents.find((post) => post.id === id);
 
-    if (!blogPost) {
+    // if (!blogPost) {
 
-        return <>BlogPost Not Found</>
+        // return <>BlogPost Not Found</>
 
-    }
-    const { blogImage, blogTitle, blogDetails } = blogPost;
+    // }
+    // const { blogImage, blogTitle, blogDetails } = blogpostsContents[];
 
-
+    console.log(location.state)
 
     return (
         <div className='blog_details'>
+            <h3>{location.state.blogTitle}</h3>
             <div className='bp_image'>
-                {blogImage ?
-                    <img src={blogImage} alt="" />
+                {location.state.blogImage ?
+                    <img src={location.state.blogImage} alt="" />
                     :
-                    <span>{blogTitle}</span>
+                    <span>{location.state.blogTitle}</span>
                 }
             </div>
-            <h3>{blogTitle}</h3>
-            <p>{blogDetails}</p>
-            werwer
+            
+            <p>{location.state.blogDetails}</p>
         </div>
     )
 }
