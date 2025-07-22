@@ -1,0 +1,50 @@
+button{
+
+    display: inline-flex;
+    border: 1px solid $theme_color1;
+    text-align: center;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: $font_size-sm;
+    cursor: pointer;
+
+    &.sml{
+
+        padding: 3px 10px;
+        font-size: $font-size-xs;
+
+    }
+
+    &.general{
+
+        background-color: $theme_color1;
+        color: $white;
+
+    }
+
+    &.outline{
+
+        background-color: transparent;
+        color: $theme_color1;
+
+    }
+
+    &.delete{
+
+        background-color: $error_color;
+        color: $white;
+        border-color: $error_color;
+        
+    }
+
+    +{
+
+        button{
+
+            margin-left: 12px;
+
+        }
+
+    }
+
+}

@@ -1,0 +1,28 @@
+.form_general{
+
+    display: block;
+    margin-top: 15px;
+
+    .form_item{
+
+        display: block;
+
+        +{
+
+            .form_item{
+
+                margin-top: 15px;
+
+            }
+            
+        }
+
+        input, textarea{
+
+            width: 100%;
+
+        }
+
+    }
+
+}
