@@ -1,27 +1,14 @@
 import React, { FC } from 'react'
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import Button from '../../components/Button/Button';
+import CommentForm from './Comments/CommentForm';
 
 
 
-// interface IBlogDetails {
-//     blogpostsContents: BlogDet[];
-// }
 const BlogDetails = () => {
     const location = useLocation();
 
-    // const { id } = useParams<{ id: string }>();
-    // const blogId = Number(id);
-    // const blogPost = blogpostsContents.find((post) => post.id === id);
-
-    // if (!blogPost) {
-
-        // return <>BlogPost Not Found</>
-
-    // }
-    // const { blogImage, blogTitle, blogDetails } = blogpostsContents[];
-
-     const navigate = useNavigate();
+    const navigate = useNavigate();
 
     return (
         <div className='blog_details'>
@@ -30,7 +17,6 @@ const BlogDetails = () => {
                     <h3>{location.state.blogTitle}</h3>
                 </div>
                 <div>
-                    {/* <button onClick={() => navigate(-1)}>Back</button> */}
                     <Button onClick={() => navigate(-1)} className="outline" children={"Back"} />
                 </div>
             </div>
@@ -47,21 +33,9 @@ const BlogDetails = () => {
             </div>
             
             <div className='blog_comments'>
-                
-                <form className='form_general' action="">
-                    <div className='form_item'>
-                        <input type="text" placeholder='Name' />
-                    </div>
-                    <div className='form_item'>
-                        <input type="text" placeholder='Email' />
-                    </div>
-                    <div className='form_item'>
-                        <textarea rows={4} placeholder="Comment" id=""></textarea>
-                    </div>
-                    <div className='form_item'>
-                        <Button  className="general" children={"Submit"} />
-                    </div>
-                </form>
+                <h4>Add Your comments</h4>
+
+                <CommentForm />
                 
             </div>
         </div>

@@ -48,7 +48,9 @@ const BlogList = () => {
 
             {blogpostsContents.map(post => (
 
-                <BlogPost key={post.id} id={post.id} blogImage={post.blogImage} blogTitle={post.blogTitle} blogDetails={post.blogDetails} />
+                // <BlogPost key={post.id} id={post.id} blogImage={post.blogImage} blogTitle={post.blogTitle} blogDetails={post.blogDetails} />
+
+                <BlogPost key={post.id} {...post} />//This is equivallent to the above code: usage of spread operator reduced the size of code
 
             ))}
 
