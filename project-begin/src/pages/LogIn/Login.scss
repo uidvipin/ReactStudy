@@ -1,0 +1,23 @@
+.log_in{
+
+    padding: 20px;
+    display: flex;
+
+    .log_in_form{
+
+        width: 400px;
+
+    }
+
+    .login_design{
+
+        width: calc(100% - 400px);
+        font-size: 100px;
+        text-align: center;
+        font-weight: 300;
+        color: $theme_color2;
+        opacity: 0.3;
+
+    }
+
+}

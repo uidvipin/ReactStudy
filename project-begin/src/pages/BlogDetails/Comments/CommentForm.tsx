@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const CommentForm = () => {
   const [formData, setFormData] = useState({ name: '', email: '', postComment: ''});
   const [comments, setComments] = useState<{ name: string; email: string; postComment: string }[]>([]);
+  const[testname, setTestname] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {//event handler function in typescript tells TypeScript that this function can receive events from either an input or textarea element.
     const { name, value } = e.target;
@@ -20,6 +21,12 @@ const CommentForm = () => {
 
   return (
     <div className="comment_form">
+          <input
+            type="text"
+            value={testname}
+            onChange={(e) => setTestname(e.target.value)}
+          />
+          <h4>{testname}</h4>
       <form onSubmit={handleSubmit} className="form_general">
 
         <div className='form_item'>

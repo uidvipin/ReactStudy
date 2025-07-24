@@ -3,11 +3,12 @@ import React from 'react'
 interface IButton{
     onClick?: () => void,
     children: any,
-    className: string
+    className?: string,
+    typeBtn?: 'button' | 'submit' | 'reset'
 }
-const Button: React.FC<IButton> = ({className, children, onClick}) => {
+const Button: React.FC<IButton> = ({className, children, onClick, typeBtn}) => {
   return (
-    <button onClick={onClick} className={className} >
+    <button type={typeBtn} onClick={onClick} className={className} >
         {children}
     </button>
   )
