@@ -15,7 +15,7 @@ const LogIn = () => {
         if(!email.trim() || !password.trim()){
 
             setError("Both Fields are required");
-            console.log('Both Fields are required');
+            console.log(error);
             return;
 
         }
@@ -51,7 +51,7 @@ const LogIn = () => {
                 </div>
 
                 <div className='form_item'>
-                    <Button onClick={()=> navigate("register")} className='outline' children={"Register"} />
+                    <Button onClick={()=> navigate("/register")} className='outline' children={"Register"} />
                     <Button typeBtn='submit' className='general' children={"Login"} />
                     
                 </div>
