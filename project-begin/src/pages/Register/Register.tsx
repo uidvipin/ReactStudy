@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
 
-    const[error, setError] = useState('');
+    // const[error, setError] = useState('');
     const[email, setEmail] = useState('');
     const[password, setPassword] = useState('');
     const [name, setName] = useState('');
@@ -15,13 +15,13 @@ const Register = () => {
 
         if(!email.trim() || !password.trim() || !name.trim()){
 
-            setError("All Fields are required");
-            console.log(error);
+            // setError("All Fields are required");
+            console.log("All Fields are required");
             return;
 
         }
 
-        setError('');
+        // setError('');
         console.log('Name:', name);
         console.log('Email:', email);
         console.log('Password:', password);
@@ -63,7 +63,7 @@ const Register = () => {
                 </div>
 
                 <div className='form_item'>
-                    <Button onClick={()=> navigate('/log-in')} className='outline' children={"Log In"} />
+                    <Button onClick={()=> navigate('/log-in')} className='outline' children={"Already Registered? Log In"} />
                     <Button typeBtn='submit' className='general' children={"Register Now"} />
                     
                 </div>

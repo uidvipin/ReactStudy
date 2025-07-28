@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const LogIn = () => {
 
-    const[error, setError] = useState('');
+    // const[error, setError] = useState('');
     const[email, setEmail] = useState('');
     const[password, setPassword] = useState('');
     const navigate= useNavigate();
@@ -14,13 +14,13 @@ const LogIn = () => {
 
         if(!email.trim() || !password.trim()){
 
-            setError("Both Fields are required");
-            console.log(error);
+            // setError("Both Fields are required");
+            console.log("Both Fields are required");
             return;
 
         }
 
-        setError('');
+        // setError('');
         console.log('Email:', email);
         console.log('Password:', password);
 
