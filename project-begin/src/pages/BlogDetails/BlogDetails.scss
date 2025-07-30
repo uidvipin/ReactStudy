@@ -30,5 +30,20 @@
 
     }
 
+    .blog_reaction{
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: -48px;
+
+        button{
+
+            margin-left: 16px;
+
+        }
+
+    }
+
 
 }
