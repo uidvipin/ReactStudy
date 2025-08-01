@@ -14,7 +14,7 @@ const Header = () => {
       <ul className='blog_menu'>
         <li><a onClick={()=> navigate("/")} href='#'>Home</a></li>
         {/* <li><a onClick={()=> navigate("/")} href='#'>Posts</a></li> */}
-        {/* <li><a href='#'>Contact Us</a></li> */}
+        <li><a onClick={()=> navigate("categories")} href='#'>Categories</a></li>
         <li><a onClick={()=> navigate("log-in")} href='#'>Log in</a></li>
         <li><a onClick={()=> navigate("/register")} href='#'>Register</a></li>
       </ul>

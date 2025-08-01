@@ -5,6 +5,7 @@ import BlogDetails from './BlogDetails/BlogDetails'
 import { Route, Routes } from "react-router-dom";
 import LogIn from './LogIn/LogIn';
 import Register from './Register/Register';
+import PostCategories from './PostCategories/PostCategories';
 
 
 const Layout = () => {
@@ -16,6 +17,7 @@ const Layout = () => {
       <Routes>
         <Route path={"/"} element={<BlogList />} />
         <Route path={"/blog-details"} element={<BlogDetails />} />
+        <Route path={"/categories"} element={<PostCategories />} />
         <Route path={"/log-in"} element={<LogIn />} />
         <Route path={"/register"} element={<Register />} />
       </Routes>

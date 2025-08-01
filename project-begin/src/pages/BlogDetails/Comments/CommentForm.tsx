@@ -67,7 +67,7 @@ const CommentForm = () => {
         </div>
         <div className='form_item'>
 
-          <Button typeBtn='submit' className='general' children={"Submit"} />
+          <Button typeBtn='submit' className='general'>Submit</Button>
         </div>
         
       </form>

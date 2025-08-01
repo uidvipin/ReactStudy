@@ -22,7 +22,7 @@ const BlogPost: React.FC<IBlogPost> = (props) => {
  };
   
   return (
-    <div className='blog_post' onClick={() => navigate("blog-details",{state:props})}>
+    <div className='blog_post' onClick={() => navigate("/blog-details",{state:props})}>
         <div className='bp_image'>
             {blogImage?
                 <img src={blogImage} alt="" />

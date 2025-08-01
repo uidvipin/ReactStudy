@@ -36,7 +36,7 @@ const BlogDetails = () => {
                     <h3>{location.state.blogTitle}</h3>
                 </div>
                 <div>
-                    <Button onClick={() => navigate(-1)} className="outline" children={"Back"} />
+                    <Button onClick={() => navigate(-1)} className="outline">Back</Button>
                 </div>
             </div>
             <div className='bp_image'>
@@ -53,9 +53,9 @@ const BlogDetails = () => {
             <div className='blog_reaction'>
                 Do you like this post?
                 {postLiked? 
-                    <Button className='general' onClick={likeHandler} children={"Unlike"} />
+                    <Button className='general' onClick={likeHandler}>Unlike</Button>
                     :
-                    <Button className='outline' onClick={likeHandler} children={"Like"} />
+                    <Button className='outline' onClick={likeHandler}>Like</Button>
                 }
                 
             </div>
