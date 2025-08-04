@@ -1,54 +1,98 @@
-import React, { useState } from 'react'
+import React, { JSX, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import BlogList from '../BlogList/BlogList';
+import BlogList, { blogpostsContents } from '../BlogList/BlogList';
+
+type Category = {
+
+    key: string,
+    label: string,
+    content: JSX.Element
+
+}
+
+const categories: Category[] = [
+
+    {key: "All", label: "All", content: <BlogList data={blogpostsContents}/>},
+    {key: "English", label: "English", content: <BlogList data={blogpostsContents.filter(bl=> bl.blogCategory === "English")}/>},
+    {key: "Hindi", label: "Hindi", content: <BlogList data={blogpostsContents.filter(bl=> bl.blogCategory === "Hindi")}/>},
+    {key: "Tamil", label: "Tamil", content: <BlogList data={blogpostsContents.filter(bl=> bl.blogCategory === "Tamil")}/>},
+    {key: "Malayalam", label: "Malayalam", content: <BlogList data={blogpostsContents.filter(bl=> bl.blogCategory === "Malayalam")}/>},
+    {key: "Foreign", label: "Foreign", content: <BlogList data={blogpostsContents.filter(bl=> bl.blogCategory === "Foreign")}/>},
+
+];
 
 const PostCategories = () => {
 
-  const [tabContent, setTabContent] = useState("All");
-  const catChange = (tabSelected?: any) => {
+  const[activeCategory, setActiveCategory] = useState("All");
+  const handleCategoryChange = (categoryKey: string) => {
+    setActiveCategory(categoryKey)  
+  }
 
-   setTabContent(tabSelected);
+  const currentTab = categories.find(cat => cat.key === activeCategory);
 
-  };
+
+
+//   const [tabContent, setTabContent] = useState("All");
+//   const catChange = (tabSelected?: any) => {
+
+//    setTabContent(tabSelected);
+
+//   };
 
 
   return (
     <div className='post_categories'>
+        {/* This is very basic type of the tab */}
+        {/* <ul className='category_menu'>
+            <li>
+                <a className={`${tabContent === "All" && 'active'}`} onClick={()=> catChange("All")} href="#">All</a>
+            </li>
+            <li>
+                <a className={`${tabContent === "English" && 'active'}`} onClick={()=> catChange("English")} href="#">English</a>
+            </li>
+            <li>
+                <a className={`${tabContent === "Hindi" && 'active'}`} onClick={()=> catChange("Hindi")} href="#">Hindi</a>
+            </li>
+            <li>
+                <a className={`${tabContent === "Tamil" && 'active'}`} onClick={()=> catChange("Tamil")} href="#">Tamil</a>
+            </li>
+            <li>
+                <a className={`${tabContent === "Malayalam" && 'active'}`} onClick={()=> catChange("Malayalam")} href="#">Malayalam</a>
+            </li>
+            <li>
+                <a className={`${tabContent === "Foreign" && 'active'}`} onClick={()=> catChange("Foreign")} href="#">Foreign</a>
+            </li>
+        </ul> */}
+
+        {/* <div className='category_list'>
+
+            {tabContent === "All" && <BlogList data={blogpostsContents}/>}
+            
+            {tabContent === "English" && <BlogList data={blogpostsContents.filter(bl=> bl.blogCategory === "English")}/>}
+            
+            {tabContent === "Hindi" && <BlogList data={blogpostsContents.filter(bl=> bl.blogCategory === "Hindi")}/>}
+            
+            {tabContent === "Tamil" && <BlogList data={blogpostsContents.filter(bl=> bl.blogCategory === "Tamil")}/>}
+            
+            {tabContent === "Malayalam" && <BlogList data={blogpostsContents.filter(bl=> bl.blogCategory === "Malayalam")}/>}
+            
+            {tabContent === "Foreign" && <BlogList data={blogpostsContents.filter(bl=> bl.blogCategory === "Foreign")}/>}
+
+        </div> */}
+
+
+        {/* Advantages: Dynamic Rendering, Scalable, Clean JSX, Professional UI, Safe lookup */}
         <ul className='category_menu'>
-            <li>
-                <a onClick={()=> catChange("All")} href="#">All</a>
-            </li>
-            <li>
-                <a onClick={()=> catChange("English")} href="#">English</a>
-            </li>
-            <li>
-                <a onClick={()=> catChange("Hindi")} href="#">Hindi</a>
-            </li>
-            <li>
-                <a onClick={()=> catChange("Tamil")} href="#">Tamil</a>
-            </li>
-            <li>
-                <a onClick={()=> catChange("Malayalam")} href="#">Malayalam</a>
-            </li>
-            <li>
-                <a onClick={()=> catChange("Foreign")} href="#">Foreign</a>
-            </li>
+            {categories.map(category => (
+                <li>
+                    <a onClick={() => handleCategoryChange(category.key)} className={`${category.key === activeCategory && 'active'}`} href="#">{category.label}</a>
+                </li>
+            
+            ))}
         </ul>
 
         <div className='category_list'>
-
-            {tabContent === "All" && <BlogList />}
-            
-            {tabContent === "English" && <h1>English</h1>}
-            
-            {tabContent === "Hindi" && <h1>Hindi</h1>}
-            
-            {tabContent === "Tamil" && <h1>Tamil</h1>}
-            
-            {tabContent === "Malayalam" && <h1>Malayalam</h1>}
-            
-            {tabContent === "Foreign" && <h1>Foreign</h1>}
-
+            {currentTab?.content}
         </div>
 
     </div>

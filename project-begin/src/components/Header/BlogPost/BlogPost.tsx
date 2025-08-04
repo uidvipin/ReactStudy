@@ -1,9 +1,9 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import { IBlogPost } from '../../../pages/BlogList/BlogList';
+import { postContents } from '../../../pages/BlogList/BlogList';
 import { text } from 'stream/consumers';
 
-const BlogPost: React.FC<IBlogPost> = (props) => {
+const BlogPost: React.FC<postContents> = (props) => {
 
  const{
     blogImage,

@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import BlogPost from '../../components/Header/BlogPost/BlogPost'
 
-export type IBlogPost = {
+export type postContents = {
 
     id: any;
     blogImage?: any;
@@ -10,7 +10,7 @@ export type IBlogPost = {
     blogCategory?: string;
 
 }
-const blogpostsContents: IBlogPost[] = [
+export const blogpostsContents: postContents[] = [
 
     {
         id: 1,
@@ -83,17 +83,19 @@ const blogpostsContents: IBlogPost[] = [
 
 ];
 
+interface IBlog {
+    data: postContents[]
+}
+const BlogList:FC<IBlog> = ({data}) => {
 
-const BlogList = () => {
-
-
+    
 
     return (
         <>
 
             <div className='blog_list'>
 
-                {blogpostsContents.map(post => (
+                {data.map(post => (
 
                     // <BlogPost key={post.id} id={post.id} blogImage={post.blogImage} blogTitle={post.blogTitle} blogDetails={post.blogDetails} />
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Header from '../components/Header/Header'
-import BlogList from './BlogList/BlogList'
+import BlogList, { blogpostsContents } from './BlogList/BlogList'
 import BlogDetails from './BlogDetails/BlogDetails'
 import { Route, Routes } from "react-router-dom";
 import LogIn from './LogIn/LogIn';
@@ -15,7 +15,7 @@ const Layout = () => {
       <Header />
 
       <Routes>
-        <Route path={"/"} element={<BlogList />} />
+        <Route path={"/"} element={<BlogList data={blogpostsContents}/>} />
         <Route path={"/blog-details"} element={<BlogDetails />} />
         <Route path={"/categories"} element={<PostCategories />} />
         <Route path={"/log-in"} element={<LogIn />} />
