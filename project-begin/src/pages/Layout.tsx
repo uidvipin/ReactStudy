@@ -6,6 +6,8 @@ import { Route, Routes } from "react-router-dom";
 import LogIn from './LogIn/LogIn';
 import Register from './Register/Register';
 import PostCategories from './PostCategories/PostCategories';
+import Banner from '../components/Banner/Banner';
+import PostsAPI from './PostsAPI/PostsAPI';
 
 
 const Layout = () => {
@@ -15,11 +17,12 @@ const Layout = () => {
       <Header />
 
       <Routes>
-        <Route path={"/"} element={<BlogList data={blogpostsContents}/>} />
+        <Route path={"/"} element={<><Banner /><BlogList data={blogpostsContents}/></>} />
         <Route path={"/blog-details"} element={<BlogDetails />} />
         <Route path={"/categories"} element={<PostCategories />} />
         <Route path={"/log-in"} element={<LogIn />} />
         <Route path={"/register"} element={<Register />} />
+        <Route path={"/posts"} element={<PostsAPI />} />
       </Routes>
 
 

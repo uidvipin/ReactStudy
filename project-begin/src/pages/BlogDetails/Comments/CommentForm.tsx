@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Button from '../../../components/Button/Button';
 
 const CommentForm = () => {
   const [formData, setFormData] = useState({ name: '', email: '', postComment: ''});
   const [comments, setComments] = useState<{ name: string; email: string; postComment: string }[]>([]);
   // const[errormsg, setErrormsg] = useState('');
+  const errorRef = useRef('Error');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {//event handler function in typescript tells TypeScript that this function can receive events from either an input or textarea element.
     const { name, value } = e.target;
@@ -22,7 +23,10 @@ const CommentForm = () => {
     if(!formData.name.trim() || !formData.email.trim() || !formData.postComment.trim()){
 
       // setErrormsg("All fields are necessary");
-      console.log("All fields are necessary");
+      // console.log(errormsg);
+
+      errorRef.current= 'All fields are necessary';
+      console.log(errorRef.current);
 
       return;
 

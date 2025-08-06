@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react'
-import BlogPost from '../../components/Header/BlogPost/BlogPost'
+import BlogPost from '../../components/BlogPost/BlogPost'
 
 export type postContents = {
 
@@ -60,7 +60,7 @@ export const blogpostsContents: postContents[] = [
         blogDetails: "Kilukkam (transl. Jingle) is a 1991 Indian Malayalam-language comedy drama film directed by Priyadarshan and written by Venu Nagavalli",
     },
     {
-        blogTitle: "A beautiful portrait having beatiful performances",
+        blogTitle: "A beautiful portrait having beautiful performances",
         id: 8,
         blogCategory: "Tamil",
         blogImage: "https://a.ltrbxd.com/resized/film-poster/1/6/5/4/4/16544-iruvar-0-460-0-690-crop.jpg?k=cd3f1d420e",
