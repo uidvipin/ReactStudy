@@ -16,14 +16,14 @@ const PostsAPI = () => {
   
   const [postApi, setPostApi]= useState<IPost[]>([]);
   useEffect(() => {
-    fetch(postApiVar)
-      .then(response => response.json())
-      .then(data => setPostApi(data))
+    fetch(postApiVar)//waiting for the response
+      .then(response => response.json())//if response comes
+      .then(data => setPostApi(data))// the necessary code
       // .catch(error => console.error('Error:', error))
   }, []);
 
   return (
-    <div style={{padding: '15px', display: 'grid', gridTemplateColumns:'repeat(3, 1fr)', gridColumnGap: '15px', gridRowGap: '15px'}} className='api_management'>
+    <div style={{padding: '15px', display: 'grid', gridTemplateColumns:'repeat(auto-fill, minmax(300px,1fr))', gridColumnGap: '15px', gridRowGap: '15px'}} className='api_management'>
 
       {postApi.map((post, index) =>(
         <div key={index}>
